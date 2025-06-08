@@ -1,0 +1,214 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+#adminLogoutBtn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: background-color 0.2s;
+}
+
+#adminLogoutBtn:hover {
+    background-color: #c82333;
+}
+
+main {
+    padding: 20px;
+}
+
+.admin-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.login-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-form button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.admin-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Mba hidona raha be loatra ny bokotra */
+}
+
+.admin-nav .nav-button {
+    background-color: #e9ecef;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.admin-nav .nav-button:hover {
+    background-color: #dee2e6;
+}
+
+.admin-nav .nav-button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.admin-content {
+    display: none; /* Cache par défaut, géré par JS */
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.admin-content h2, .admin-content h3 {
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.admin-content input,
+.admin-content select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.admin-content button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.2s;
+}
+
+.admin-content button:hover {
+    background-color: #218838;
+}
+
+.admin-content button#deleteChannelBtn,
+.admin-content button#deleteVideoBtn,
+.admin-content button#removeSubscriptionBtn,
+.admin-content button#deleteAdBtn {
+    background-color: #dc3545;
+}
+
+.admin-content button#deleteChannelBtn:hover,
+.admin-content button#deleteVideoBtn:hover,
+.admin-content button#removeSubscriptionBtn:hover,
+.admin-content button#deleteAdBtn:hover {
+    background-color: #c82333;
+}
+
+.admin-content ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.admin-content ul li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    font-size: 14px;
+    word-wrap: break-word; /* Manakana ny lahatsoratra tsy hihoatra */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    header h1 {
+        margin-bottom: 10px;
+    }
+    .header-right {
+        margin-top: 10px;
+    }
+    .admin-nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .admin-nav .nav-button {
+        margin: 5px 0;
+    }
+    .admin-content input,
+    .admin-content select,
+    .admin-content button {
+        width: 100%;
+        margin-right: 0;
+    }
+}

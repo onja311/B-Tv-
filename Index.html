@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-TV - Salegy TV</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script> <script src="https://www.youtube.com/iframe_api"></script> 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script> 
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="btv-logo.png" alt="B-TV Logo" class="logo">
+            <h1>B-TV</h1>
+        </div>
+        <div class="header-right">
+            <span id="adminUserEmail">Non connecté</span> <button id="authButton" class="auth-button">Se connecter</button>
+            <span id="onlineUsersCount" class="online-count">0 en ligne</span>
+        </div>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <h2>Chaînes</h2>
+            <ul id="channelList">
+                <p id="noChannelMessage">Aucune chaîne disponible pour le moment.</p>
+            </ul>
+            <div class="contact-links">
+                <h3>Contactez-nous</h3>
+                <a href="#" id="facebookLink" target="_blank" class="contact-icon fb-icon"></a>
+                <a href="#" id="whatsappLink" target="_blank" class="contact-icon wa-icon"></a>
+            </div>
+        </aside>
+
+        <section class="video-player-section">
+            <h2 id="videoTitleDisplay">Veuillez vous connecter pour accéder aux vidéos.</h2>
+            <p id="errorMessage" class="error-message"></p>
+            <p id="loadingMessage" class="loading-message" style="display: none;">Chargement de la vidéo...</p>
+            <div id="mainVideoPlayerDiv" class="video-container" style="display: none;">
+                <div id="mainVideoPlayer"></div>
+            </div>
+            
+            <div id="videoList" class="video-list">
+                </div>
+        </section>
+        
+        <aside class="ads-sidebar">
+            <h2>Publicités</h2>
+            <div id="adsContainer" class="ads-container">
+                </div>
+        </aside>
+    </main>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Connexion</h2>
+            <p id="authError" class="error-message"></p>
+            <input type="tel" id="phoneNumberInput" placeholder="Votre numéro de téléphone (+261xxxxxxxxx)">
+            <div id="recaptcha-container"></div>
+            <button id="sendCodeBtn">Envoyer le code</button>
+            <input type="text" id="verificationCodeInput" placeholder="Code de vérification" style="display: none;">
+            <button id="verifyCodeBtn" style="display: none;">Vérifier le code</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 B-TV. Tous droits réservés.</p>
+    </footer>
+
+    <script src="firebase-config.js"></script> <script src="script.js"></script>          </body>
+</html>
